@@ -39,6 +39,8 @@
             fileMngrApp = new Button();
             label4 = new Label();
             fileHolder = new TextBox();
+            refreshApp = new Button();
+            refreshFile = new Button();
             SuspendLayout();
             // 
             // label1
@@ -73,11 +75,11 @@
             // 
             // forceQuitButton
             // 
-            forceQuitButton.Location = new Point(397, 726);
+            forceQuitButton.Location = new Point(12, 759);
             forceQuitButton.Name = "forceQuitButton";
-            forceQuitButton.Size = new Size(112, 34);
+            forceQuitButton.Size = new Size(497, 34);
             forceQuitButton.TabIndex = 4;
-            forceQuitButton.Text = "Force Quit";
+            forceQuitButton.Text = "Force Kill";
             forceQuitButton.UseVisualStyleBackColor = true;
             forceQuitButton.Click += forceQuitButton_Click;
             // 
@@ -105,7 +107,7 @@
             // 
             forceQuitAppID.Location = new Point(113, 729);
             forceQuitAppID.Name = "forceQuitAppID";
-            forceQuitAppID.Size = new Size(269, 31);
+            forceQuitAppID.Size = new Size(396, 31);
             forceQuitAppID.TabIndex = 7;
             forceQuitAppID.TextChanged += forceQuitAppID_TextChanged;
             // 
@@ -122,9 +124,9 @@
             // 
             // fileMngrApp
             // 
-            fileMngrApp.Location = new Point(714, 731);
+            fileMngrApp.Location = new Point(674, 731);
             fileMngrApp.Name = "fileMngrApp";
-            fileMngrApp.Size = new Size(497, 34);
+            fileMngrApp.Size = new Size(560, 34);
             fileMngrApp.TabIndex = 9;
             fileMngrApp.Text = "Open File Manager";
             fileMngrApp.UseVisualStyleBackColor = true;
@@ -134,7 +136,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(875, 9);
+            label4.Location = new Point(889, 9);
             label4.Name = "label4";
             label4.Size = new Size(143, 32);
             label4.TabIndex = 10;
@@ -150,12 +152,34 @@
             fileHolder.TabIndex = 11;
             fileHolder.TextChanged += fileHolder_TextChanged;
             // 
+            // refreshApp
+            // 
+            refreshApp.Location = new Point(12, 790);
+            refreshApp.Name = "refreshApp";
+            refreshApp.Size = new Size(497, 34);
+            refreshApp.TabIndex = 12;
+            refreshApp.Text = "Refresh";
+            refreshApp.UseVisualStyleBackColor = true;
+            refreshApp.Click += refreshApp_Click;
+            // 
+            // refreshFile
+            // 
+            refreshFile.Location = new Point(1086, 4);
+            refreshFile.Name = "refreshFile";
+            refreshFile.Size = new Size(112, 34);
+            refreshFile.TabIndex = 13;
+            refreshFile.Text = "Refresh File";
+            refreshFile.UseVisualStyleBackColor = true;
+            refreshFile.Click += refreshFile_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1246, 828);
+            Controls.Add(refreshFile);
+            Controls.Add(refreshApp);
             Controls.Add(fileHolder);
             Controls.Add(label4);
             Controls.Add(fileMngrApp);
@@ -170,7 +194,7 @@
             Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             Name = "Form1";
-            Text = "Allowed Apps Manager";
+            Text = "App Restriction [GUI]";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -189,5 +213,7 @@
         private Button fileMngrApp;
         private Label label4;
         private TextBox fileHolder;
+        private Button refreshApp;
+        private Button refreshFile;
     }
 }

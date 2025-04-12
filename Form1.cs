@@ -17,6 +17,7 @@ namespace App_Restrict_Test_2
                 limitList.Checked = false;
                 limitList.Enabled = true;
                 forceQuitButton.Enabled = true;
+                refreshApp.Enabled = true;
             }
             else
             {
@@ -24,8 +25,9 @@ namespace App_Restrict_Test_2
                 limitList.Checked = true;
                 limitList.Enabled = false;
                 forceQuitButton.Enabled = false;
+                refreshApp.Enabled = false;
             }
-            if (localEnableAll) { limitList.Enabled = true; forceQuitButton.Enabled = true; enableAll = true; }
+            if (localEnableAll) { limitList.Enabled = true; forceQuitButton.Enabled = true; enableAll = true; refreshApp.Enabled = true; }
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
             timer.Interval = 50; //50ms interval
             timer.Tick += APPTICK;
@@ -74,37 +76,40 @@ namespace App_Restrict_Test_2
             Debug.WriteLine("Force quit button pressed");
             Process toKill = Process.GetProcessById(int.Parse(forceQuitAppID.Text));
             if (toKill != null) { toKill.Kill(); }
-
-
-            //            List<string> APPIDS = new List<string>();
-            //            var temp = "";
-            //            for (int i = 0; i < processListBox.Items.Count; i++)
-            //            {
-            //                if (processListBox.GetItemChecked(i) == true)
-            //                {
-            //                    Debug.WriteLine("Process: " + processListBox.Items[i].ToString() + " is checked");
-            //                    bool pastLine = false;
-            //#pragma warning disable CS8602 // Dereference of a possibly null reference.
-            //                    for (int j = 0; j < processListBox.Items[i].ToString().Length; j++)
-            //                    {
-            //                        if (pastLine)
-            //                        {
-            //                            temp = temp + processListBox.Items[i].ToString()[j];
-            //                        }
-            //                        else
-            //                        {
-            //                            if (processListBox.Items[i].ToString()[j] == '|')
-            //                            {
-            //                                pastLine = true;
-            //                            }
-            //                        }
-            //                    }
-            //#pragma warning restore CS8602 // Dereference of a possibly null reference.
-            //                }
-            //                Debug.WriteLine(temp);
-            //                temp = "";
-            //            }
+            else { MessageBox.Show("Process was null"); }
         }
+
+
+        //            List<string> APPIDS = new List<string>();
+        //            var temp = "";
+        //            for (int i = 0; i < processListBox.Items.Count; i++)
+        //            {
+        //                if (processListBox.GetItemChecked(i) == true)
+        //                {
+        //                    Debug.WriteLine("Process: " + processListBox.Items[i].ToString() + " is checked");
+        //                    bool pastLine = false;
+        //#pragma warning disable CS8602 // Dereference of a possibly null reference.
+        //                    for (int j = 0; j < processListBox.Items[i].ToString().Length; j++)
+        //                    {
+        //                        if (pastLine)
+        //                        {
+        //                            temp = temp + processListBox.Items[i].ToString()[j];
+        //                        }
+        //                        else
+        //                        {
+        //                            if (processListBox.Items[i].ToString()[j] == '|')
+        //                            {
+        //                                pastLine = true;
+        //                            }
+        //                        }
+        //                    }
+        //#pragma warning restore CS8602 // Dereference of a possibly null reference.
+        //                }
+        //                Debug.WriteLine(temp);
+        //                temp = "";
+        //            }
+
+
 
         private void refreshList_Click(object sender, EventArgs e)
         {
@@ -189,6 +194,35 @@ namespace App_Restrict_Test_2
                 processListFile.Close();
                 fileHolder.Text = processListFileContents;
             }
+            else { MessageBox.Show("File does NOT exist"); }
+        }
+
+        private void refreshApp_Click(object sender, EventArgs e)
+        {
+            Process toRefresh = Process.GetProcessById(int.Parse(forceQuitAppID.Text));
+            if (toRefresh != null) { toRefresh.Refresh(); }
+            else { MessageBox.Show("Process was null"); }
+
+
+        }
+
+        private void refreshFile_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("processList.appreistr"))
+            {
+                var processListFileContents = "";
+                FileStream processListFile = File.OpenRead("processList.appreistr");
+                processListFile.Seek(0, SeekOrigin.Begin);
+                for (int i = 0; i < processListFile.Length; i++)
+                {
+                    processListFile.Position = i;
+                    processListFileContents = processListFileContents + ((char)((byte)processListFile.ReadByte()));
+                }
+                processListFileContents = Program.Base64Decode(processListFileContents);
+                processListFile.Close();
+                fileHolder.Text = processListFileContents;
+            }
+            else { MessageBox.Show("File does NOT exist"); }
         }
     }
 }
