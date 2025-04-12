@@ -1,0 +1,16 @@
+C:\Users\hbush\source\repos\App Restrict Test 2\bin\Debug\net8.0-windows\App Restrict Test 2.exe
+C:\Users\hbush\source\repos\App Restrict Test 2\bin\Debug\net8.0-windows\App Restrict Test 2.deps.json
+C:\Users\hbush\source\repos\App Restrict Test 2\bin\Debug\net8.0-windows\App Restrict Test 2.runtimeconfig.json
+C:\Users\hbush\source\repos\App Restrict Test 2\bin\Debug\net8.0-windows\App Restrict Test 2.dll
+C:\Users\hbush\source\repos\App Restrict Test 2\bin\Debug\net8.0-windows\App Restrict Test 2.pdb
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\App_Restrict_Test_2.Form1.resources
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\App Restrict Test 2.csproj.GenerateResource.cache
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\App Restrict Test 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\App Restrict Test 2.AssemblyInfoInputs.cache
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\App Restrict Test 2.AssemblyInfo.cs
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\App Restrict Test 2.csproj.CoreCompileInputs.cache
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\App Restrict Test 2.dll
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\refint\App Restrict Test 2.dll
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\App Restrict Test 2.pdb
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\App Restrict Test 2.genruntimeconfig.cache
+C:\Users\hbush\source\repos\App Restrict Test 2\obj\Debug\net8.0-windows\ref\App Restrict Test 2.dll
