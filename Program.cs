@@ -8,8 +8,9 @@ namespace App_Restrict_Test_2
     internal static class Program
     {
         private static string? whiteOrBlackList;
+        private static string? restrictAll;
 
-        [MTAThread]
+
 
         //public static string Base64Encode(string plainText)
         //{
@@ -22,6 +23,8 @@ namespace App_Restrict_Test_2
             var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
             return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
         }
+
+        [STAThread]
         static void Main(string[] args)
         {
             var GUI = false;
@@ -104,10 +107,28 @@ namespace App_Restrict_Test_2
                                         }
                                         else
                                         {
-                                            if (processList.Contains(tempStr)) { Debug.WriteLine("Already Contains: \n" + tempStr); }
-                                            else
+                                            if (tempStr == "#RESTRICTALLPROCESSES")
                                             {
-                                                processList.Add(tempStr);
+                                                restrictAll = "all";
+                                            }
+                                            else {
+                                                if (tempStr == "#RESTRICTWINDOWEDPROCESSES")
+                                                {
+                                                    restrictAll = "win";
+                                                }
+                                                else {
+                                                    if (restrictAll == "")
+                                                    {
+                                                        Debug.WriteLine("Invalid Restriction State");
+                                                    }
+                                                    else {
+                                                        if (processList.Contains(tempStr)) { Debug.WriteLine("Already Contains: \n" + tempStr); }
+                                                        else
+                                                        {
+                                                            processList.Add(tempStr);
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     }

@@ -62,6 +62,7 @@
             // processListBox
             // 
             processListBox.CheckOnClick = true;
+            processListBox.Enabled = false;
             processListBox.FormattingEnabled = true;
             processListBox.Location = new Point(12, 44);
             processListBox.Name = "processListBox";

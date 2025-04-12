@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="fileManagerApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -72,6 +72,7 @@ namespace App_Restrict_Test_2
         private void forceQuitButton_Click(object sender, EventArgs e)
         {
             Debug.WriteLine("Force quit button pressed");
+            MessageBox.Show("Unfinished Currently");
 
 
             //            List<string> APPIDS = new List<string>();
@@ -155,7 +156,10 @@ namespace App_Restrict_Test_2
 
         private void fileMngrApp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("No, im losing my mind thanks to threading bugs right now... its 6:20, give me a minute");
+            Debug.WriteLine("WATERBUCKET, RELEASE!!!!!!!!");
+            fileManagerApp fileManagerApp = new fileManagerApp();
+            fileManagerApp.Show();
+            //fileManagerApp.Dispose();
         }
     }
 }
