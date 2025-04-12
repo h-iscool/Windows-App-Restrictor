@@ -71,6 +71,7 @@ namespace App_Restrict_Test_2
                             processListFile.Position = i;
                             processListFileContents = processListFileContents + ((char)((byte)processListFile.ReadByte()));
                         }
+                        //processListFileContents = fileManagerApp.ShiftEncoding(processListFileContents, fileManagerApp.encodingCharSet.Capacity - 7, fileManagerApp.encodingCharSet);
                         processListFileContents = Base64Decode(processListFileContents);
                         processListFile.Close();
                         Debug.WriteLine("File read as: \n \n" + processListFileContents);

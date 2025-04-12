@@ -74,11 +74,17 @@ namespace App_Restrict_Test_2
         private void forceQuitButton_Click(object sender, EventArgs e)
         {
             Debug.WriteLine("Force quit button pressed");
-            Process toKill = Process.GetProcessById(int.Parse(forceQuitAppID.Text));
-            if (toKill != null) { toKill.Kill(); }
-            else { MessageBox.Show("Process was null"); }
+            if (forceQuitAppID.Text != "")
+            {
+                Process toKill = Process.GetProcessById(int.Parse(forceQuitAppID.Text));
+                if (toKill != null) { toKill.Kill(); }
+                else { MessageBox.Show("Process was null"); }
+            }
+            else
+            {
+                MessageBox.Show("Provide an app id");
+            }
         }
-
 
         //            List<string> APPIDS = new List<string>();
         //            var temp = "";
@@ -199,11 +205,17 @@ namespace App_Restrict_Test_2
 
         private void refreshApp_Click(object sender, EventArgs e)
         {
-            Process toRefresh = Process.GetProcessById(int.Parse(forceQuitAppID.Text));
-            if (toRefresh != null) { toRefresh.Refresh(); }
-            else { MessageBox.Show("Process was null"); }
+            if (forceQuitAppID.Text != "")
+            {
+                Process toRefresh = Process.GetProcessById(int.Parse(forceQuitAppID.Text));
+                if (toRefresh != null) { toRefresh.Refresh(); }
+                else { MessageBox.Show("Process was null"); }
 
 
+            }
+            else {
+                MessageBox.Show("Provide an app id");
+            }
         }
 
         private void refreshFile_Click(object sender, EventArgs e)
@@ -218,6 +230,7 @@ namespace App_Restrict_Test_2
                     processListFile.Position = i;
                     processListFileContents = processListFileContents + ((char)((byte)processListFile.ReadByte()));
                 }
+                //processListFileContents = fileManagerApp.ShiftEncoding(processListFileContents, fileManagerApp.encodingCharSet.Capacity-7, fileManagerApp.encodingCharSet);
                 processListFileContents = Program.Base64Decode(processListFileContents);
                 processListFile.Close();
                 fileHolder.Text = processListFileContents;

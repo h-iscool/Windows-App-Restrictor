@@ -17,13 +17,61 @@ namespace App_Restrict_Test_2
         {
             InitializeComponent();
         }
-
+        //DivideByZeroException
         public static string Base64Encode(string plainText)
         {
             var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
             return System.Convert.ToBase64String(plainTextBytes);
         }
 
+
+        //public static string ShiftEncoding(string toEncode, int shiftBy) {
+        //    String temp = "";
+        //    var tempIndex = 0;
+        //    List<string> charSet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ",", ".", "<", ">", "/", "?", ";", ":", "'", "\"", "[", "]", "{", "}", "\\", "|", "`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
+
+        //    for (int i = 0; i < toEncode.Length; i++) {
+        //        if (charSet.Contains(toEncode[i].ToString()))
+        //        {
+        //            tempIndex = charSet.IndexOf(toEncode[i].ToString());
+        //            tempIndex = tempIndex + shiftBy;
+        //            if (tempIndex < 0)
+        //            {
+        //                tempIndex = charSet.Capacity - tempIndex;
+        //            }
+        //            temp = temp + charSet[tempIndex];
+        //        }
+        //        else { 
+        //            temp = temp+toEncode[i];
+        //        }
+        //    }
+        //    return temp;
+        //}
+        //public static string ShiftDecoding(string toDecode, int shiftBy)
+        //{
+        //    String temp = "";
+        //    var tempIndex = 0;
+        //    List<string> charSet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ",", ".", "<", ">", "/", "?", ";", ":", "'", "\"", "[", "]", "{", "}", "\\", "|", "`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
+
+        //    for (int i = 0; i < toDecode.Length; i++)
+        //    {
+        //        if (charSet.Contains(toDecode[i].ToString()))
+        //        {
+        //            tempIndex = charSet.IndexOf(toDecode[i].ToString());
+        //            tempIndex = tempIndex - shiftBy;
+        //            if (tempIndex < 0)
+        //            {
+        //                tempIndex = charSet.Capacity - tempIndex;
+        //            }
+        //            temp = temp + charSet[tempIndex];
+        //        }
+        //        else
+        //        {
+        //            temp = temp + toDecode[i];
+        //        }
+        //    }
+        //    return temp;
+        //}
         private void fileManagerApp_Load(object sender, EventArgs e)
         {
             textBox1.Enabled = false;
@@ -105,6 +153,7 @@ namespace App_Restrict_Test_2
 
                 //B64:
                 generatedFileAsStr = Base64Encode(generatedFileAsStr);
+                //generatedFileAsStr = ShiftEncoding(generatedFileAsStr, 7); !!!FINISH LATER!!!
 
                 //Save file dialog:
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
