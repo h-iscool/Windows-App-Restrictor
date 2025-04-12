@@ -30,12 +30,15 @@ namespace App_Restrict_Test_2
             var GUI = false;
             var isAdmin = false;
             var enableAll = false;
+            var noKill = false;
+            bool mainLoop = true;
             if ((new WindowsPrincipal(WindowsIdentity.GetCurrent())
                 .IsInRole(WindowsBuiltInRole.Administrator)))
             {
                 GUI = true;
                 isAdmin = true;
                 enableAll = true;
+                noKill = true;
             }
             if (args.FirstOrDefault("noGUI").ToLower() == "gui")
             {
@@ -44,17 +47,18 @@ namespace App_Restrict_Test_2
             if (args.Contains("enableAll")) { 
                 enableAll = true;
             }
+            if (args.Contains("noKill")) { 
+                noKill = true;
+            }
             if (GUI)
             {
                 Application.Run(new Form1(isAdmin,enableAll));
             }
             else
             {
-                while (true)
+                while (mainLoop)
                 {
-                    var processes = Process.GetProcesses()
-                    .Where(p => p.MainWindowHandle != 0)
-                        .ToArray();
+                    
                     List<string> processList = new List<string>();
 
                     if (File.Exists("processList.appreistr"))
@@ -110,11 +114,13 @@ namespace App_Restrict_Test_2
                                             if (tempStr == "#RESTRICTALLPROCESSES")
                                             {
                                                 restrictAll = "all";
+                                                Debug.WriteLine("Restriction = all");
                                             }
                                             else {
                                                 if (tempStr == "#RESTRICTWINDOWEDPROCESSES")
                                                 {
                                                     restrictAll = "win";
+                                                    Debug.WriteLine("Restriction = windowed");
                                                 }
                                                 else {
                                                     if (restrictAll == "")
@@ -149,6 +155,8 @@ namespace App_Restrict_Test_2
                     else
                     {
                         Debug.WriteLine("No file exists, stopping to prevent crashing");
+                        MessageBox.Show("No file exists, stopping to prevent crashing");
+                        mainLoop = false;
                     }
                     String[] ArrayVerOfList = processList.ToArray();
                     //for (int i = 0; i < ArrayVerOfList.Length; i++) { 
@@ -157,23 +165,99 @@ namespace App_Restrict_Test_2
 
                     if (whiteOrBlackList == "whitelist")
                     {
-                        foreach (var process in processes)
+                        if (restrictAll == "win")
                         {
-                            if (process != null)
+                            var processes = Process.GetProcesses()
+                            .Where(p => p.MainWindowHandle != 0)
+                            .ToArray();
+                            foreach (var process in processes)
                             {
-                                if (processList.Contains(process.ToString()))
+                                if (process != null)
                                 {
-                                    Debug.WriteLine("Application '" + process.ToString() + "' is safe | WHITELIST ALLOWED");
+                                    if (processList.Contains(process.ToString()))
+                                    {
+                                        Debug.WriteLine("Application '" + process.ToString() + "' is safe | WHITELIST ALLOWED");
+                                    }
+                                    else
+                                    {
+                                        Debug.WriteLine("Application '" + process.ToString() + "' will close as it is not on whitelist.");
+                                        if (!noKill) { process.Kill(); }
+                                    }
                                 }
-                                else
+                                else { Debug.WriteLine("Process is null"); }
+                            }
+                        }
+                        if (restrictAll == "all")
+                        {
+                            var processes = Process.GetProcesses();
+                            foreach (var process in processes)
+                            {
+                                if (process != null)
                                 {
-                                    Debug.WriteLine("Application '" + process.ToString() + "' will close as it is not on whitelist.");
+                                    if (processList.Contains(process.ToString()))
+                                    {
+                                        Debug.WriteLine("Application '" + process.ToString() + "' is safe | WHITELIST ALLOWED");
+                                    }
+                                    else
+                                    {
+                                        Debug.WriteLine("Application '" + process.ToString() + "' will close as it is not on whitelist.");
+                                        if (!noKill) { process.Kill(); }
+                                    }
+                                }
+                                else { Debug.WriteLine("Process is null"); }
+                            }
+                        }
 
+                    }
+                    else {
+                        if (whiteOrBlackList == "blacklist")
+                        {
+                            if (restrictAll == "win")
+                            {
+                                var processes = Process.GetProcesses()
+                                .Where(p => p.MainWindowHandle != 0)
+                                .ToArray();
+                                foreach (var process in processes)
+                                {
+                                    if (process != null)
+                                    {
+                                        if (processList.Contains(process.ToString()))
+                                        {
+                                            Debug.WriteLine("Application '" + process.ToString() + "' is NOT safe | BLACKLISTED");
+                                            if (!noKill) { process.Kill(); }
+                                        }
+                                        else
+                                        {
+                                            Debug.WriteLine("Application '" + process.ToString() + "' is ok (not on blacklist)");
+
+                                        }
+                                    }
+                                    else { Debug.WriteLine("Process is null"); }
                                 }
                             }
-                            else { Debug.WriteLine("Process is null"); }
+                            if (restrictAll == "all")
+                            {
+                                var processes = Process.GetProcesses();
+                                foreach (var process in processes)
+                                {
+                                    if (process != null)
+                                    {
+                                        if (processList.Contains(process.ToString()))
+                                        {
+                                            Debug.WriteLine("Application '" + process.ToString() + "' is NOT safe | BLACKLISTED");
+                                            if (!noKill) { process.Kill(); }
+                                        }
+                                        else
+                                        {
+                                            Debug.WriteLine("Application '" + process.ToString() + "' is ok (not on blacklist)");
+
+                                        }
+                                    }
+                                    else { Debug.WriteLine("Process is null"); }
+                                }
+                            }
+
                         }
-                        
                     }
 
 

@@ -34,16 +34,18 @@
             forceQuitButton = new Button();
             refreshList = new Button();
             label3 = new Label();
-            textBox1 = new TextBox();
+            forceQuitAppID = new TextBox();
             limitList = new CheckBox();
             fileMngrApp = new Button();
+            label4 = new Label();
+            fileHolder = new TextBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1135, 9);
+            label1.Location = new Point(1135, 798);
             label1.Name = "label1";
             label1.Size = new Size(99, 21);
             label1.TabIndex = 1;
@@ -62,7 +64,6 @@
             // processListBox
             // 
             processListBox.CheckOnClick = true;
-            processListBox.Enabled = false;
             processListBox.FormattingEnabled = true;
             processListBox.Location = new Point(12, 44);
             processListBox.Name = "processListBox";
@@ -100,12 +101,13 @@
             label3.Text = "App ID (#):";
             label3.Click += label3_Click;
             // 
-            // textBox1
+            // forceQuitAppID
             // 
-            textBox1.Location = new Point(113, 729);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(269, 31);
-            textBox1.TabIndex = 7;
+            forceQuitAppID.Location = new Point(113, 729);
+            forceQuitAppID.Name = "forceQuitAppID";
+            forceQuitAppID.Size = new Size(269, 31);
+            forceQuitAppID.TabIndex = 7;
+            forceQuitAppID.TextChanged += forceQuitAppID_TextChanged;
             // 
             // limitList
             // 
@@ -120,7 +122,7 @@
             // 
             // fileMngrApp
             // 
-            fileMngrApp.Location = new Point(674, 731);
+            fileMngrApp.Location = new Point(714, 731);
             fileMngrApp.Name = "fileMngrApp";
             fileMngrApp.Size = new Size(497, 34);
             fileMngrApp.TabIndex = 9;
@@ -128,15 +130,37 @@
             fileMngrApp.UseVisualStyleBackColor = true;
             fileMngrApp.Click += fileMngrApp_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(875, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(143, 32);
+            label4.TabIndex = 10;
+            label4.Text = "Current File:";
+            // 
+            // fileHolder
+            // 
+            fileHolder.Location = new Point(674, 44);
+            fileHolder.Multiline = true;
+            fileHolder.Name = "fileHolder";
+            fileHolder.ScrollBars = ScrollBars.Both;
+            fileHolder.Size = new Size(560, 676);
+            fileHolder.TabIndex = 11;
+            fileHolder.TextChanged += fileHolder_TextChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1246, 828);
+            Controls.Add(fileHolder);
+            Controls.Add(label4);
             Controls.Add(fileMngrApp);
             Controls.Add(limitList);
-            Controls.Add(textBox1);
+            Controls.Add(forceQuitAppID);
             Controls.Add(label3);
             Controls.Add(refreshList);
             Controls.Add(forceQuitButton);
@@ -147,6 +171,7 @@
             MaximizeBox = false;
             Name = "Form1";
             Text = "Allowed Apps Manager";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -159,8 +184,10 @@
         private Button forceQuitButton;
         private Button refreshList;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox forceQuitAppID;
         private CheckBox limitList;
         private Button fileMngrApp;
+        private Label label4;
+        private TextBox fileHolder;
     }
 }

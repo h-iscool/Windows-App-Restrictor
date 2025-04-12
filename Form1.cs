@@ -72,7 +72,8 @@ namespace App_Restrict_Test_2
         private void forceQuitButton_Click(object sender, EventArgs e)
         {
             Debug.WriteLine("Force quit button pressed");
-            MessageBox.Show("Unfinished Currently");
+            Process toKill = Process.GetProcessById(int.Parse(forceQuitAppID.Text));
+            if (toKill != null) { toKill.Kill(); }
 
 
             //            List<string> APPIDS = new List<string>();
@@ -160,6 +161,34 @@ namespace App_Restrict_Test_2
             fileManagerApp fileManagerApp = new fileManagerApp();
             fileManagerApp.Show();
             //fileManagerApp.Dispose();
+        }
+
+        private void forceQuitAppID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fileHolder_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (File.Exists("processList.appreistr"))
+            {
+                var processListFileContents = "";
+                FileStream processListFile = File.OpenRead("processList.appreistr");
+                processListFile.Seek(0, SeekOrigin.Begin);
+                for (int i = 0; i < processListFile.Length; i++)
+                {
+                    processListFile.Position = i;
+                    processListFileContents = processListFileContents + ((char)((byte)processListFile.ReadByte()));
+                }
+                processListFileContents = Program.Base64Decode(processListFileContents);
+                processListFile.Close();
+                fileHolder.Text = processListFileContents;
+            }
         }
     }
 }
