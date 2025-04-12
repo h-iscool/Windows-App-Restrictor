@@ -36,7 +36,12 @@ namespace App_Restrict_Test_2
 
                     }
                     else {
-                        MessageBox.Show(process.ToString());
+                        //MessageBox.Show(process.ToString());
+                        var killProgram = MessageBox.Show("Kill Process "+process+"?", "Kill Process?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (killProgram == DialogResult.Yes)
+                        {
+                            process.Kill();
+                        }
                     }
                 }
             }
