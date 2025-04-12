@@ -9,7 +9,19 @@ namespace App_Restrict_Test_2
     {
         private static string? whiteOrBlackList;
 
-        [STAThread]
+        [MTAThread]
+
+        //public static string Base64Encode(string plainText)
+        //{
+        //    var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+        //    return System.Convert.ToBase64String(plainTextBytes);
+        //}
+
+        public static string Base64Decode(string base64EncodedData)
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+        }
         static void Main(string[] args)
         {
             var GUI = false;
@@ -52,6 +64,8 @@ namespace App_Restrict_Test_2
                             processListFile.Position = i;
                             processListFileContents = processListFileContents + ((char)((byte)processListFile.ReadByte()));
                         }
+                        processListFileContents = Base64Decode(processListFileContents);
+                        processListFile.Close();
                         Debug.WriteLine("File read as: \n \n" + processListFileContents);
                         //how to inefficient your code 101 for beginers!
 

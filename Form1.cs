@@ -155,9 +155,7 @@ namespace App_Restrict_Test_2
 
         private void fileMngrApp_Click(object sender, EventArgs e)
         {
-            Form fileMgrApp = new fileMngrApp(isAdmin,enableAll);
-            fileMgrApp.TopMost = true;
-            fileMgrApp.ShowDialog();
+            MessageBox.Show("No, im losing my mind thanks to threading bugs right now... its 6:20, give me a minute");
         }
     }
 }
