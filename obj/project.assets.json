@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hbush\\source\\repos\\App Restrict Test 2\\App Restrict Test 2.csproj",
+      "projectUniqueName": "C:\\Users\\hbush\\Downloads\\App Restrict Test 2-20250407T023834Z-001\\App Restrict Test 2\\App Restrict Test 2.csproj",
       "projectName": "App Restrict Test 2",
-      "projectPath": "C:\\Users\\hbush\\source\\repos\\App Restrict Test 2\\App Restrict Test 2.csproj",
+      "projectPath": "C:\\Users\\hbush\\Downloads\\App Restrict Test 2-20250407T023834Z-001\\App Restrict Test 2\\App Restrict Test 2.csproj",
       "packagesPath": "C:\\Users\\hbush\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hbush\\source\\repos\\App Restrict Test 2\\obj\\",
+      "outputPath": "C:\\Users\\hbush\\Downloads\\App Restrict Test 2-20250407T023834Z-001\\App Restrict Test 2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
