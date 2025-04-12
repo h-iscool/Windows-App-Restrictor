@@ -30,3 +30,4 @@ C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict T
 C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows\App Restrict Test 2.pdb
 C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows\App Restrict Test 2.genruntimeconfig.cache
 C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows\ref\App Restrict Test 2.dll
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows\App_Restrict_Test_2.fileMngrApp.resources

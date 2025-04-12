@@ -14,19 +14,24 @@ namespace App_Restrict_Test_2
         {
             var GUI = false;
             var isAdmin = false;
+            var enableAll = false;
             if ((new WindowsPrincipal(WindowsIdentity.GetCurrent())
                 .IsInRole(WindowsBuiltInRole.Administrator)))
             {
                 GUI = true;
                 isAdmin = true;
+                enableAll = true;
             }
             if (args.FirstOrDefault("noGUI").ToLower() == "gui")
             {
                 GUI = true;
             }
+            if (args.Contains("enableAll")) { 
+                enableAll = true;
+            }
             if (GUI)
             {
-                Application.Run(new Form1(isAdmin));
+                Application.Run(new Form1(isAdmin,enableAll));
             }
             else
             {

@@ -32,6 +32,11 @@
             label2 = new Label();
             processListBox = new CheckedListBox();
             forceQuitButton = new Button();
+            refreshList = new Button();
+            label3 = new Label();
+            textBox1 = new TextBox();
+            limitList = new CheckBox();
+            fileMngrApp = new Button();
             SuspendLayout();
             // 
             // label1
@@ -66,7 +71,7 @@
             // 
             // forceQuitButton
             // 
-            forceQuitButton.Location = new Point(12, 739);
+            forceQuitButton.Location = new Point(397, 726);
             forceQuitButton.Name = "forceQuitButton";
             forceQuitButton.Size = new Size(112, 34);
             forceQuitButton.TabIndex = 4;
@@ -74,12 +79,65 @@
             forceQuitButton.UseVisualStyleBackColor = true;
             forceQuitButton.Click += forceQuitButton_Click;
             // 
+            // refreshList
+            // 
+            refreshList.Location = new Point(173, 7);
+            refreshList.Name = "refreshList";
+            refreshList.Size = new Size(112, 34);
+            refreshList.TabIndex = 5;
+            refreshList.Text = "Refresh";
+            refreshList.UseVisualStyleBackColor = true;
+            refreshList.Click += refreshList_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 731);
+            label3.Name = "label3";
+            label3.Size = new Size(99, 25);
+            label3.TabIndex = 6;
+            label3.Text = "App ID (#):";
+            label3.Click += label3_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(113, 729);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(269, 31);
+            textBox1.TabIndex = 7;
+            // 
+            // limitList
+            // 
+            limitList.AutoSize = true;
+            limitList.Location = new Point(335, 9);
+            limitList.Name = "limitList";
+            limitList.Size = new Size(107, 29);
+            limitList.TabIndex = 8;
+            limitList.Text = "Limit List";
+            limitList.UseVisualStyleBackColor = true;
+            limitList.CheckedChanged += limitList_CheckedChanged;
+            // 
+            // fileMngrApp
+            // 
+            fileMngrApp.Location = new Point(674, 731);
+            fileMngrApp.Name = "fileMngrApp";
+            fileMngrApp.Size = new Size(497, 34);
+            fileMngrApp.TabIndex = 9;
+            fileMngrApp.Text = "Open File Manager";
+            fileMngrApp.UseVisualStyleBackColor = true;
+            fileMngrApp.Click += fileMngrApp_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1246, 828);
+            Controls.Add(fileMngrApp);
+            Controls.Add(limitList);
+            Controls.Add(textBox1);
+            Controls.Add(label3);
+            Controls.Add(refreshList);
             Controls.Add(forceQuitButton);
             Controls.Add(processListBox);
             Controls.Add(label2);
@@ -98,5 +156,10 @@
         private Label label2;
         private CheckedListBox processListBox;
         private Button forceQuitButton;
+        private Button refreshList;
+        private Label label3;
+        private TextBox textBox1;
+        private CheckBox limitList;
+        private Button fileMngrApp;
     }
 }

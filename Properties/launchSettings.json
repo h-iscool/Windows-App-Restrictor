@@ -1,7 +1,8 @@
 {
   "profiles": {
     "App Restrict Test 2": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "gui enableAll"
     }
   }
 }
