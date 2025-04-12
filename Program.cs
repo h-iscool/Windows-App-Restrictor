@@ -42,10 +42,10 @@ namespace App_Restrict_Test_2
                         .ToArray();
                     List<string> processList = new List<string>();
 
-                    if (File.Exists("processList.txt"))
+                    if (File.Exists("processList.appreistr"))
                     {
                         var processListFileContents = "";
-                        FileStream processListFile = File.OpenRead("processList.txt");
+                        FileStream processListFile = File.OpenRead("processList.appreistr");
                         processListFile.Seek(0, SeekOrigin.Begin);
                         for (int i = 0; i < processListFile.Length; i++)
                         {

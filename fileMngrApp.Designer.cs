@@ -36,11 +36,12 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(105, 25);
+            label1.Size = new Size(218, 38);
             label1.TabIndex = 0;
-            label1.Text = "Current File:";
+            label1.Text = "Current file info:";
             // 
             // loadSaveFile
             // 
@@ -54,12 +55,13 @@
             // 
             // createSaveFile
             // 
-            createSaveFile.Location = new Point(609, 249);
+            createSaveFile.Location = new Point(609, 221);
             createSaveFile.Name = "createSaveFile";
             createSaveFile.Size = new Size(112, 34);
             createSaveFile.TabIndex = 2;
             createSaveFile.Text = "Save File";
             createSaveFile.UseVisualStyleBackColor = true;
+            createSaveFile.Click += createSaveFile_Click;
             // 
             // fileMngrApp
             // 

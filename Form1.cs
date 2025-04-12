@@ -6,7 +6,8 @@ namespace App_Restrict_Test_2
     {
         public bool isAdmin = false;
         public bool firstTick = true;
-        public Form1(bool build, bool enableAll)
+        public bool enableAll = false;
+        public Form1(bool build, bool localEnableAll)
         {
             isAdmin = build;
             InitializeComponent();
@@ -15,14 +16,16 @@ namespace App_Restrict_Test_2
                 label1.Text = "Admin Build";
                 limitList.Checked = false;
                 limitList.Enabled = true;
+                forceQuitButton.Enabled = true;
             }
             else
             {
                 label1.Text = "Default Build";
                 limitList.Checked = true;
                 limitList.Enabled = false;
+                forceQuitButton.Enabled = false;
             }
-            if (enableAll) { limitList.Enabled = true; }
+            if (localEnableAll) { limitList.Enabled = true; forceQuitButton.Enabled = true; enableAll = true; }
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
             timer.Interval = 50; //50ms interval
             timer.Tick += APPTICK;
@@ -51,7 +54,7 @@ namespace App_Restrict_Test_2
 
         private void APPTICK(object? sender, EventArgs e)
         {
-            Debug.WriteLine("TICK");
+            //Debug.WriteLine("TICK");
 
             if (firstTick) { firstTick = false; }
         }
@@ -152,7 +155,8 @@ namespace App_Restrict_Test_2
 
         private void fileMngrApp_Click(object sender, EventArgs e)
         {
-            Form fileMgrApp = new fileMngrApp(isAdmin);
+            Form fileMgrApp = new fileMngrApp(isAdmin,enableAll);
+            fileMgrApp.TopMost = true;
             fileMgrApp.ShowDialog();
         }
     }
