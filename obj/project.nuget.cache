@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fqb/VPAD3tI=",
+  "dgSpecHash": "TfpFz4FSLs4=",
   "success": true,
   "projectFilePath": "C:\\Users\\hbush\\Downloads\\App Restrict Test 2-20250407T023834Z-001\\App Restrict Test 2\\App Restrict Test 2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\hbush\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.57\\microsoft.windows.sdk.net.ref.10.0.17763.57.nupkg.sha512"
+  ],
   "logs": []
 }

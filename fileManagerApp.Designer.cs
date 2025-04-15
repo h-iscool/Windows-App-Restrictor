@@ -42,6 +42,9 @@
             label3 = new Label();
             restrictBgApps = new CheckBox();
             checkBox1 = new CheckBox();
+            linkLabel1 = new LinkLabel();
+            allowEnableAllArg = new CheckBox();
+            dissableGuiArg = new CheckBox();
             SuspendLayout();
             // 
             // saveFile
@@ -49,7 +52,7 @@
             saveFile.BackColor = Color.SlateGray;
             saveFile.FlatStyle = FlatStyle.Flat;
             saveFile.ForeColor = Color.WhiteSmoke;
-            saveFile.Location = new Point(1058, 520);
+            saveFile.Location = new Point(1062, 450);
             saveFile.Name = "saveFile";
             saveFile.Size = new Size(112, 34);
             saveFile.TabIndex = 0;
@@ -222,12 +225,53 @@
             checkBox1.UseVisualStyleBackColor = false;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.ActiveLinkColor = Color.WhiteSmoke;
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.WhiteSmoke;
+            linkLabel1.Location = new Point(12, 683);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(191, 25);
+            linkLabel1.TabIndex = 14;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Developed by h-iscool";
+            linkLabel1.VisitedLinkColor = Color.WhiteSmoke;
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
+            // allowEnableAllArg
+            // 
+            allowEnableAllArg.AutoSize = true;
+            allowEnableAllArg.BackColor = Color.SlateGray;
+            allowEnableAllArg.Location = new Point(933, 525);
+            allowEnableAllArg.Name = "allowEnableAllArg";
+            allowEnableAllArg.Size = new Size(241, 29);
+            allowEnableAllArg.TabIndex = 15;
+            allowEnableAllArg.Text = "Allow enableAll argument";
+            allowEnableAllArg.UseVisualStyleBackColor = false;
+            allowEnableAllArg.CheckedChanged += allowEnableAllArg_CheckedChanged;
+            // 
+            // dissableGuiArg
+            // 
+            dissableGuiArg.AutoSize = true;
+            dissableGuiArg.BackColor = Color.SlateGray;
+            dissableGuiArg.Location = new Point(954, 490);
+            dissableGuiArg.Name = "dissableGuiArg";
+            dissableGuiArg.Size = new Size(220, 29);
+            dissableGuiArg.TabIndex = 16;
+            dissableGuiArg.Text = "Dissable GUI argument";
+            dissableGuiArg.UseVisualStyleBackColor = false;
+            dissableGuiArg.CheckedChanged += dissableGuiArg_CheckedChanged;
+            // 
             // fileManagerApp
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
             ClientSize = new Size(1182, 717);
+            Controls.Add(dissableGuiArg);
+            Controls.Add(allowEnableAllArg);
+            Controls.Add(linkLabel1);
             Controls.Add(checkBox1);
             Controls.Add(restrictBgApps);
             Controls.Add(label3);
@@ -266,5 +310,8 @@
         private Label label3;
         private CheckBox restrictBgApps;
         private CheckBox checkBox1;
+        private LinkLabel linkLabel1;
+        private CheckBox allowEnableAllArg;
+        private CheckBox dissableGuiArg;
     }
 }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+// at some point ill add a file loader, but not rn
 namespace App_Restrict_Test_2
 {
     public partial class fileManagerApp : Form
@@ -124,7 +124,17 @@ namespace App_Restrict_Test_2
                 {
                     generatedFileAsStr = generatedFileAsStr + "#RESTRICTWINDOWEDPROCESSES;";
                 }
-                if (alwaysEnabledApps.Checked && whiteOrBlacklist.Text == "Whitelist") // I almost enabled blacklisting this OwO
+                if (dissableGuiArg.Checked)
+                {
+                    generatedFileAsStr = generatedFileAsStr + "#NOGUI;";
+                }
+                else { generatedFileAsStr = generatedFileAsStr + "#GUI;"; }
+                if (allowEnableAllArg.Checked)
+                {
+                    generatedFileAsStr = generatedFileAsStr + "#ALLOWENABLEALL;";
+                }
+                else { generatedFileAsStr = generatedFileAsStr + "#NOENABLEALL;"; }
+                    if (alwaysEnabledApps.Checked && whiteOrBlacklist.Text == "Whitelist") // I almost enabled blacklisting this OwO
                 {
                     generatedFileAsStr = generatedFileAsStr + "System.Diagnostics.Process (explorer);System.Diagnostics.Process (TextInputHost);System.Diagnostics.Process (App Restrict Test 2);System.Diagnostics.Process (Idle);System.Diagnostics.Process (System);System.Diagnostics.Process (Secure System);System.Diagnostics.Process (Registry);System.Diagnostics.Process (smss);System.Diagnostics.Process (csrss);System.Diagnostics.Process (wininit);System.Diagnostics.Process (services);System.Diagnostics.Process (svchost);System.Diagnostics.Process (fontdrvhost);System.Diagnostics.Process (WUDFHost);System.Diagnostics.Process (atiesrxx);System.Diagnostics.Process (Memory Compression);System.Diagnostics.Process (spoolsv);System.Diagnostics.Process (Admin Service);System.Diagnostics.Process (DAX3API);System.Diagnostics.Process (FMService64);System.Diagnostics.Process (MpDefenderCoreService);System.Diagnostics.Process (MBAMService);System.Diagnostics.Process (unsecapp);System.Diagnostics.Process (AggregatorHost);System.Diagnostics.Process (SearchIndexer);System.Diagnostics.Process (NisSrv);System.Diagnostics.Process (SecurityHealthService);System.Diagnostics.Process (conhost);System.Diagnostics.Process (winlogon);System.Diagnostics.Process (dwrm);System.Diagnostics.Process (AutoModeDetect);System.Diagnostics.Process (sihost);System.Diagnostics.Process (taskhostw);System.Diagnostics.Process (ShellHost);System.Diagnostics.Process (SearchHost);System.Diagnostics.Process (StartMenuExperienceHost);System.Diagnostics.Process (RuntimeBroker);System.Diagnostics.Process (msedgewebview2);System.Diagnostics.Process (ctfmon);System.Diagnostics.Process (SmartSenseController);System.Diagnostics.Process (devenv);System.Diagnostics.Process (RuntimeBroker);System.Diagnostics.Process (cmd);System.Diagnostics.Process (dllhost);System.Diagnostics.Process (MSBuild);System.Diagnostics.Process (DesignToolsServer);System.Diagnostics.Process (MicrosoftEdgeUpdate);System.Diagnostics.Process (Taskmgr);System.Diagnostics.Process (Notepad);"; // NOTE: ONLY A FEW RUN BECAUSE OF THIS APPLICATION, THE OTHERS ARE BACKGROUND PROCESSES THAT ARE HERE TO TRY TO PREVENT FATAL CRASHING. (SOME ALSO ARE THINGS LIKE TASK MANAGER TO STOP PROBLEMS)
                 }
@@ -165,7 +175,8 @@ namespace App_Restrict_Test_2
                 {
                     System.IO.FileStream fileStream = (System.IO.FileStream)saveFileDialog.OpenFile();
                     //PUT SAVE FILE CODE HERE
-                    for (int i = 0; generatedFileAsStr.Length > i; i++) { 
+                    for (int i = 0; generatedFileAsStr.Length > i; i++)
+                    {
                         fileStream.WriteByte((byte)generatedFileAsStr[i]);
                     }
                     fileStream.Close();
@@ -285,9 +296,25 @@ namespace App_Restrict_Test_2
                     textBox1.Enabled = true;
                 }
             }
-            else { 
-                textBox1.Enabled = false ;
+            else
+            {
+                textBox1.Enabled = false;
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://github.com/h-iscool/Windows-App-Restrictor") { UseShellExecute = true });
+        }
+
+        private void dissableGuiArg_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void allowEnableAllArg_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

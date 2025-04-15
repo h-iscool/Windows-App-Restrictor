@@ -1,0 +1,20 @@
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\bin\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.exe
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\bin\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.deps.json
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\bin\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.runtimeconfig.json
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\bin\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.dll
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\bin\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.pdb
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\bin\Debug\net8.0-windows10.0.17763.0\Microsoft.Windows.SDK.NET.dll
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\bin\Debug\net8.0-windows10.0.17763.0\WinRT.Runtime.dll
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App_Restrict_Test_2.fileManagerApp.resources
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App_Restrict_Test_2.Form1.resources
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.csproj.GenerateResource.cache
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.AssemblyInfoInputs.cache
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.AssemblyInfo.cs
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.csproj.CoreCompileInputs.cache
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App Rest.90A53271.Up2Date
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.dll
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\refint\App Restrict Test 2.dll
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.pdb
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\App Restrict Test 2.genruntimeconfig.cache
+C:\Users\hbush\Downloads\App Restrict Test 2-20250407T023834Z-001\App Restrict Test 2\obj\Debug\net8.0-windows10.0.17763.0\ref\App Restrict Test 2.dll
