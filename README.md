@@ -35,3 +35,6 @@ Development started on 4/4/2025 at 1:01 in the morning ;w;
 
 If there are any major problems, you can contact me (or fix it yourself and recompile):
 hbushnell1515@gmail.com
+
+
+why does this md feel so formal?? its wierd
