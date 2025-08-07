@@ -1,3 +1,6 @@
+THIS PROJECT IS BEING REMADE:
+[NEW VERSION](https://github.com/h-iscool/Windows-App-Manager/tree/main)
+
 # Windows-App-Restrictor
 
 A simple application for restricting apps on a windows pc.
